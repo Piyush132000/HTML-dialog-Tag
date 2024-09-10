@@ -1,115 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Styled Dialog Example</title>
   <style>
-   /* Style for the dialog */
-#loginDialog {
-  border: none;
-  border-radius: 10px;
-  padding: 20px;
-  width: 350px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #f7f7f7;
-  font-family: Arial, sans-serif;
-}
+    /* Style for the dialog */
+    #loginDialog {
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+      width: 350px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: white;
+      font-family: Arial, sans-serif;
+    }
 
-/* Center the dialog on the screen */
-#loginDialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-}
+    /* Center the dialog on the screen */
+    #loginDialog::backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
-/* Style for the form */
-#loginDialog form {
-  display: flex;
-  flex-direction: column;
-}
+    /* Style for the form */
+    #loginDialog form {
+      display: flex;
+      flex-direction: column;
+    }
 
-/* Label and input styles */
-#loginDialog label {
-  margin: 10px 0 5px;
-  font-weight: bold;
-  color: #333;
-}
+    /* Label and input styles */
+    #loginDialog label {
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: #333;
+    }
 
-#loginDialog input[type="text"], 
-#loginDialog input[type="password"] {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  outline: none;
-}
+    #loginDialog input[type="text"],
+    #loginDialog input[type="password"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      outline: none;
+    }
 
-#loginDialog input[type="text"]:focus, 
-#loginDialog input[type="password"]:focus {
-  border-color: #007BFF;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
+    #loginDialog input[type="text"]:focus,
+    #loginDialog input[type="password"]:focus {
+      border-color: #007BFF;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
 
-/* Submit and Cancel button styles */
-#loginDialog button[type="submit"],
-#loginDialog button {
-  padding: 10px 20px;
-  margin: 10px 5px 0;
-  border: none;
-  border-radius: 5px;
-  background-color: #007BFF;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
+    /* Submit and Cancel button styles */
+    #loginDialog button[type="submit"],
+    #loginDialog button {
+      padding: 10px 20px;
+      margin: 10px 5px 0;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
 
-#loginDialog button[type="submit"]:hover,
-#loginDialog button:hover {
-  background-color: #0056b3;
-}
+    #loginDialog button[type="submit"]:hover,
+    #loginDialog button:hover {
+      background-color: #0056b3;
+    }
 
-#loginDialog button:last-child {
-  background-color: #ccc;
-  color: #333;
-}
+    #loginDialog button:last-child {
+      background-color: #ccc;
+      color: #333;
+    }
 
-#loginDialog button:last-child:hover {
-  background-color: #999;
-}
+    #loginDialog button:last-child:hover {
+      background-color: #999;
+    }
 
-/* Style for the "Login" button */
-button[onclick] {
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+    /* Style for the "Login" button */
+    button[onclick] {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-button[onclick]:hover {
-  background-color: #0056b3;
-}
-
+    button[onclick]:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
+
 <body>
 
-<dialog id="loginDialog">
-        <form method="dialog">
-          <label for="username">Username:</label>
-          <input id="username" name="username" type="text">
-          <label for="password">Password:</label>
-          <input id="password" name="password" type="password">
-          <button type="submit">Submit</button>
-          <button onclick="document.getElementById('loginDialog').close()">Cancel</button>
-        </form>
-      </dialog>
+  <dialog id="loginDialog">
+    <h1>HTML5 Native dialog</h1>
+    <form method="dialog">
+     
+      <label for="username">Username:</label>
+      <input id="username" name="username" type="text">
+      <label for="password">Password:</label>
+      <input id="password" name="password" type="password">
+      <button type="submit">Submit</button>
+      <button onclick="document.getElementById('loginDialog').close()">Cancel</button>
+    </form>
+  </dialog>
 
-      <button onclick="document.getElementById('loginDialog').showModal()">Login</button>
+  <button onclick="document.getElementById('loginDialog').showModal()">Login</button>
 
 </body>
+
 </html>
